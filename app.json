@@ -13,12 +13,22 @@
     "large": "/assets/images/large.png",
     "small": "/assets/images/small.png"
     },
+    "description": {
+    "en": "Domitech devices for Homey"
+  },
+  "category": [
+    "lights"
+    ],
     "drivers": [
         {
       "id": "dtA19-750-27",
       "name": {
         "en": "Domitech Led bulb"
       },
+      "images": {
+        "large": "/drivers/dtA19-750-27/assets/images/large.png",
+        "small": "/drivers/dtA19-750-27/assets/images/small.png"
+       },
       "zwave": {
         "manufacturerId": 526,
         "productTypeId": 19522,
