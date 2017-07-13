@@ -3,6 +3,7 @@
 const path = require('path');
 const ZwaveDriver = require('homey-zwavedriver');
 
+
 module.exports = new ZwaveDriver(path.basename(__dirname), {
 	capabilities: {
 		'onoff': {
@@ -19,9 +20,10 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 				if (typeof report['Value'] === 'string') return report['Value'] === 'on/enable';
 
 				return report['Value (Raw)'][0] > 0;
-			}
+			},
+			'getOnWakeUp': true,
+			'pollInterval': "poll_interval"
 		},
-
 		'dim': {
 			'command_class': 'COMMAND_CLASS_SWITCH_MULTILEVEL',
 			'command_get': 'SWITCH_MULTILEVEL_GET',
@@ -34,7 +36,8 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 				};
 			},
 			'command_report': 'SWITCH_MULTILEVEL_REPORT',
-			'command_report_parser': report => report['Value (Raw)'][0] / 100
+			'command_report_parser': report => report['Value (Raw)'][0] / 100,
+			'pollInterval': "poll_interval"
 		}
 	},
 	settings: {
@@ -62,6 +65,23 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 			"index": 13,
 			"size": 1,
 		},
+		"poll_interval": {
+        			"index": 13,
+        			"size": 1,
+        },
 	}
 });
 
+Homey.manager('flow').on('trigger.lamp_turned_on', (callback, args) => {
+    const node = module.exports.nodes[args.device.token];
+    if(node.value > 0){
+        return callback( null, true );
+    } else return callback( null, false );
+});
+
+Homey.manager('flow').on('trigger.lamp_turned_off', (callback, args) => {
+    const node = module.exports.nodes[args.device.token];
+    if(node.value > 0){
+        return callback( null, false );
+    } else return callback( null, true );
+});

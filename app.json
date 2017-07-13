@@ -16,6 +16,24 @@
     "description": {
     "en": "Domitech devices for Homey"
   },
+  "flow": {
+    "triggers": [
+      {
+        "id": "lamp_turned_on",
+        "title": {
+          "en": "Lamp is turned on",
+          "nl": "Lamp is aan gezet"
+        }
+      },
+      {
+        "id": "lamp_turned_off",
+        "title": {
+          "en": "Lamp is turned off",
+          "nl": "Lamp is uit gezet"
+        }
+      }
+    ]
+  },
   "category": [
     "lights"
     ],
@@ -167,6 +185,23 @@
           "hint": {
             "en": "This parameter sets the minimal brightness level.",
             "nl": "Deze parameter zet het minimale helderheidsniveau."
+          }
+        },
+        {
+          "id": "poll_interval",
+          "type": "number",
+          "label": {
+            "en": "Time inbetween polling status of the lamp",
+            "nl": "Tijd tussen het pollen van de status van de lamp"
+          },
+          "value": 1,
+          "attr": {
+            "min": 1,
+            "max": 5
+          },
+          "hint": {
+            "en": "Time in seconds",
+            "nl": "Tijd in seconden"
           }
         }
       ]
