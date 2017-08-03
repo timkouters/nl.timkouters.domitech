@@ -9,6 +9,9 @@ This app adds support for Domitech devices in Homey.
 * Dutch (Nederlands)
 
 ## Change Log:
+### v 1.0.2
+Updates polling interval to comply with Z-Wave performance
+
 ### v 1.0.1
 ** Flow cards and polling **
 dtA19-750-27 - Triggers and polling

@@ -22,7 +22,7 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 				return report['Value (Raw)'][0] > 0;
 			},
 			'getOnWakeUp': true,
-			'pollInterval': "poll_interval"
+			'pollInterval': "poll_interval" * 60
 		},
 		'dim': {
 			'command_class': 'COMMAND_CLASS_SWITCH_MULTILEVEL',
