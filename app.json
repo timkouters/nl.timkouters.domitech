@@ -32,20 +32,6 @@
                      "filter": "driver_id=dtA19-750-27"
                  }
              ]
-      },
-      {
-        "id": "lamp_turned_off",
-        "title": {
-          "en": "Lamp is turned off",
-          "nl": "Lamp is uit gezet"
-        },
-        "args": [
-                 {
-                     "name": "my_device",
-                     "type": "device",
-                     "filter": "driver_id=dtA19-750-27"
-                 }
-             ]
       }
     ]
   },
