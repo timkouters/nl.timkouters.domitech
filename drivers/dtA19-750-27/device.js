@@ -9,7 +9,7 @@ class DomitechDevice extends ZwaveDevice {
 		
 		// Create on and off triggers
 		this._flowTriggerLampTurnedOn = new Homey.FlowCardTrigger('lamp_turned_on').register();
-        this._flowTriggerLampTurnedOff = new Homey.FlowCardTrigger('lamp_turned_off').register();
+        //this._flowTriggerLampTurnedOff = new Homey.FlowCardTrigger('lamp_turned_off').register();
 		
 		// enable debugging
 		this.disableDebug();
@@ -18,6 +18,7 @@ class DomitechDevice extends ZwaveDevice {
 		this.registerCapability('onoff', 'SWITCH_MULTILEVEL', {
 			getOpts: {
 				getOnStart: true, // get the initial value on app start
+				getOnOnline: true
 			},
 			
 			command_class: 'COMMAND_CLASS_SWITCH_MULTILEVEL',
@@ -110,11 +111,11 @@ class DomitechDevice extends ZwaveDevice {
 	        .catch( this.error )
 	        .then( this.log )
 		}
-		else {
-			this._flowTriggerLampTurnedOff.trigger()
-	        .catch( this.error )
-	        .then( this.log )
-		}
+//		else {
+//			this._flowTriggerLampTurnedOff.trigger()
+//	        .catch( this.error )
+//	        .then( this.log )
+//		}
 	}
 }
 
