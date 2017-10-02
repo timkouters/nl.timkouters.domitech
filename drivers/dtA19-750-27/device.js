@@ -9,12 +9,10 @@ class DomitechDevice extends ZwaveDevice {
 		
 		// Create on and off triggers
 		this._flowTriggerLampTurnedOn = new Homey.FlowCardTrigger('lamp_turned_on').register();
-			//new Homey.FlowCardTriggerDevice('lamp_turned_on').register()
         this._flowTriggerLampTurnedOff = new Homey.FlowCardTrigger('lamp_turned_off').register();
-            //new Homey.FlowCardTriggerDevice('lamp_turned_off').register()
 		
 		// enable debugging
-		this.enableDebug();
+		this.disableDebug();
 		
 		// register the `onoff` capability with COMMAND_CLASS_SWITCH_BINARY
 		this.registerCapability('onoff', 'SWITCH_MULTILEVEL', {
@@ -32,19 +30,15 @@ class DomitechDevice extends ZwaveDevice {
 			command_report: 'SWITCH_MULTILEVEL_REPORT',
 			command_report_parser: report => {
 				if (report.Value === 'on/enable') {
-					triggerLampOnOff(true);
 					return true;
 				}
 				else if (report.Value === 'off/disable') {
-					triggerLampOnOff(false);
 					return false;
 				}
 				else if (typeof report.Value === 'number') {
-					triggerLampOnOff(report.Value > 0);
 					return report.Value > 0;
 				}
 				else if (typeof report['Value (Raw)'] !== 'undefined') {
-					triggerLampOnOff(report['Value (Raw)'][0] > 0);
 					return report['Value (Raw)'][0] > 0;
 				}
 				
@@ -54,6 +48,20 @@ class DomitechDevice extends ZwaveDevice {
 			getParserV3: ( value, opts ) => {
 				return {};
 			}
+		});
+		
+		// register a report listener
+		this.registerReportListener('SWITCH_MULTILEVEL', 'SWITCH_MULTILEVEL_REPORT', ( rawReport, parsedReport ) => {
+			//console.log('registerReportListener', parsedReport);
+			if (typeof parsedReport === 'number') {
+				if(parsedReport == 1) {
+					this.triggerLampOnOff(true)
+				}
+				
+				if(parsedReport == 0) {
+					this.triggerLampOnOff(false)
+				}
+			}			
 		});
 		
 		// register the `dim` capability with COMMAND_CLASS_SWITCH_BINARY
@@ -79,7 +87,7 @@ class DomitechDevice extends ZwaveDevice {
 				else if (report.Value === 'off/disable') {
 					return 0.0;
 				}
-				else if (typeof report.Value === 'number') {
+			    else if (typeof report.Value === 'number') {
 					return report.Value / 99;
 				}
 				else if (typeof report['Value (Raw)'] !== 'undefined') {
@@ -92,24 +100,11 @@ class DomitechDevice extends ZwaveDevice {
 			getParserV3: ( value, opts ) => {
 				return {};
 			}
-		});
-		
-		// register a report listener
-		this.registerReportListener('SWITCH_MULTILEVEL', 'SWITCH_MULTILEVEL_REPORT', ( rawReport, parsedReport ) => {
-			if(parsedReport == true) {
-				this.triggerLampOnOff(true)
-			}
-			
-			if(parsedReport == false) {
-				this.triggerLampOnOff(false)
-			}
-			
-		});
-		
+		});		
 	}
 	
 	triggerLampOnOff(value) {
-		console.log('triggerLampOnOff', value);
+		//console.log('triggerLampOnOff', value);
 		if(value) {
 			this._flowTriggerLampTurnedOn.trigger()
 	        .catch( this.error )
