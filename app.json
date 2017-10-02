@@ -1,10 +1,11 @@
 {
     "id": "nl.timkouters.domitech",
+    "sdk" : 2,
     "name": {
         "en": "Domitech"
     },
-    "version": "1.0.2",
-    "compatibility": "0.x || 1.x",
+    "version": "1.0.3",
+    "compatibility": "1.x >=1.5.0",
     "author": {
         "name": "Tim Kouters",
         "email": "timkouters@gmail.com"
@@ -23,14 +24,28 @@
         "title": {
           "en": "Lamp is turned on",
           "nl": "Lamp is aan gezet"
-        }
+        }, 
+        "args": [
+                 {
+                     "name": "my_device",
+                     "type": "device",
+                     "filter": "driver_id=dtA19-750-27"
+                 }
+             ]
       },
       {
         "id": "lamp_turned_off",
         "title": {
           "en": "Lamp is turned off",
           "nl": "Lamp is uit gezet"
-        }
+        },
+        "args": [
+                 {
+                     "name": "my_device",
+                     "type": "device",
+                     "filter": "driver_id=dtA19-750-27"
+                 }
+             ]
       }
     ]
   },
@@ -50,9 +65,7 @@
       "zwave": {
         "manufacturerId": 526,
         "productTypeId": 19522,
-        "productId": [
-          12596
-        ],
+        "productId": 12596,
         "learnmode": {
           "instruction": {
             "en": "Turn the Domitech led lamp off and on again",
@@ -83,128 +96,7 @@
       "capabilities": [
         "dim",
         "onoff"
-      ],
-      "settings": [
-        {
-          "id": "dimming_step_auto",
-          "type": "number",
-          "label": {
-            "en": "The percentage of a dimming step at automatic control",
-            "nl": "Percentage van dim stap bij automatische besturing"
-          },
-          "value": 1,
-          "attr": {
-            "min": 1,
-            "max": 99
-          },
-          "hint": {
-            "en": "The percentage (1-99) of a dimming step at automatic control.",
-            "nl": "Het percentage (1-99) per dim stap bij automatische besturing."
-          }
-        },
-        {
-          "id": "time_dimming_step_manual",
-          "type": "number",
-          "label": {
-            "en": "Time of a dimming step at manual control",
-            "nl": "Tijd per dim stap bij handmatige bediening"
-          },
-          "value": 5,
-          "attr": {
-            "min": 1,
-            "max": 255
-          },
-          "hint": {
-            "en": "Time of a dimming step at manual control for 1 to 255 (1s - 2,55s).",
-            "nl": "Tijd per dim stap bij handmatige bediening van 1 to 255 (1s - 2,55s)."
-          }
-        },
-        {
-          "id": "time_dimming_step_auto",
-          "type": "number",
-          "label": {
-            "en": "Time of a dimming step at automatic control",
-            "nl": "Tijd per dim stap bij automatische besturing"
-          },
-          "value": 1,
-          "attr": {
-            "min": 0,
-            "max": 255
-          },
-          "hint": {
-            "en": "Time of a dimming step at automatic control for 1 to 255 (1s - 2,55s).",
-            "nl": "Tijd per dim stap bij automatische besturing van 1 to 255 (1s - 2,55s)."
-          }
-        },
-        {
-          "id": "dimming_step_manual",
-          "type": "number",
-          "label": {
-            "en": "The percentage of a dimming step at manual control",
-            "nl": "Percentage van dim stap bij handmatige bediening"
-          },
-          "value": 1,
-          "attr": {
-            "min": 1,
-            "max": 99
-          },
-          "hint": {
-            "en": "The percentage (1-99) of a dimming step at manual control.",
-            "nl": "Het percentage (1-99) per dim stap bij handmatige bediening."
-          }
-        },
-        {
-          "id": "maximum_brightness",
-          "type": "number",
-          "label": {
-            "en": "Maximum brightness level",
-            "nl": "Maximaal helderheidsniveau"
-          },
-          "value": 99,
-          "attr": {
-            "min": 2,
-            "max": 99
-          },
-          "hint": {
-            "en": "This parameter sets the miniaml brightness level.",
-            "nl": "Deze parameter zet het maximale helderheidsniveau."
-          }
-        },
-        {
-          "id": "minimum_brightness",
-          "type": "number",
-          "label": {
-            "en": "Minimum brightness level",
-            "nl": "Minimale helderheidsniveau"
-          },
-          "value": 1,
-          "attr": {
-            "min": 1,
-            "max": 98
-          },
-          "hint": {
-            "en": "This parameter sets the minimal brightness level.",
-            "nl": "Deze parameter zet het minimale helderheidsniveau."
-          }
-        },
-        {
-          "id": "poll_interval",
-          "type": "number",
-          "label": {
-            "en": "Time inbetween polling status of the lamp",
-            "nl": "Tijd tussen het pollen van de status van de lamp"
-          },
-          "value": 1,
-          "attr": {
-            "min": 10,
-            "max": 120
-          },
-          "hint": {
-            "en": "Time in minutes",
-            "nl": "Tijd in minuten"
-          }
-        }
       ]
     }
-    ]
+   ]
 }

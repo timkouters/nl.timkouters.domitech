@@ -1,10 +1,11 @@
 {
   "name": "nl.timkouters.domitech",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "This app adds support for Domitech devices in Homey",
   "main": "app.js",
   "dependencies": {
-    "homey-zwavedriver": "git+https://github.com/athombv/node-homey-zwavedriver.git",
+    "homey-log": "^1.0.5",
+    "homey-meshdriver": "^1.2.1"
   },
   "devDependencies": {},
   "scripts": {
