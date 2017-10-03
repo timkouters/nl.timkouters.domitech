@@ -9,6 +9,10 @@ This app adds support for Domitech devices in Homey.
 * Dutch (Nederlands)
 
 ## Change Log:
+### v 1.0.3
+Migrated from ZwaveDriver to ZwaveDevice
+Added the turn on trigger
+
 ### v 1.0.2
 Updates polling interval to comply with Z-Wave performance
 
