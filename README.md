@@ -10,6 +10,9 @@ This app adds support for Domitech devices in Homey.
 
 ## Change Log:
 ### v 1.0.3
+Add paypal button and updated the node modules to newest versions
+
+### v 1.0.3
 Migrated from ZwaveDriver to ZwaveDevice
 Added the turn on trigger
 
