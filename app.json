@@ -10,6 +10,14 @@
         "name": "Tim Kouters",
         "email": "timkouters@gmail.com"
     },
+    "contributing": {
+        "donate": {
+            "paypal": {
+                "email": "timkouters@gmail.com",
+                "currency": "EUR"
+            }
+        }
+    },
     "images": {
     "large": "/assets/images/large.png",
     "small": "/assets/images/small.png"
