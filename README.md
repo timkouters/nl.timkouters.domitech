@@ -9,7 +9,7 @@ This app adds support for Domitech devices in Homey.
 * Dutch (Nederlands)
 
 ## Change Log:
-### v 1.0.3
+### v 1.0.4
 Add paypal button and updated the node modules to newest versions
 
 ### v 1.0.3
