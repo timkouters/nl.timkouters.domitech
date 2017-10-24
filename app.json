@@ -30,8 +30,8 @@
       {
         "id": "lamp_turned_on",
         "title": {
-          "en": "Lamp is turned on",
-          "nl": "Lamp is aan gezet"
+          "en": "Lamp is manually turned on",
+          "nl": "Lamp is manueel aan gezet"
         }, 
         "args": [
                  {
