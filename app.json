@@ -25,24 +25,6 @@
     "description": {
     "en": "Domitech devices for Homey"
   },
-  "flow": {
-    "triggers": [
-      {
-        "id": "lamp_turned_on",
-        "title": {
-          "en": "Lamp is manually turned on",
-          "nl": "Lamp is manueel aan gezet"
-        }, 
-        "args": [
-                 {
-                     "name": "my_device",
-                     "type": "device",
-                     "filter": "driver_id=dtA19-750-27"
-                 }
-             ]
-      }
-    ]
-  },
   "category": [
     "lights"
     ],
