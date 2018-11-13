@@ -4,7 +4,7 @@
     "name": {
         "en": "Domitech"
     },
-    "version": "1.0.5",
+    "version": "1.0.6",
     "compatibility": "1.x >=1.5.0",
     "author": {
         "name": "Tim Kouters",

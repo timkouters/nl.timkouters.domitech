@@ -8,7 +8,10 @@ class DomitechDevice extends ZwaveDevice {
 		// register the `onoff` capability
 		this.registerCapability('onoff', 'SWITCH_MULTILEVEL', {
 			getOpts: {
-			    getOnStart: true
+			    getOnStart: true,
+			    getOnline: true
+			    //pollInterval: 5,
+			    //pollMultiplication: 1000
 			},
 		});
 		// register the `dim` capability
