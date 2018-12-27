@@ -10,8 +10,6 @@ class DomitechDevice extends ZwaveDevice {
 			getOpts: {
 			    getOnStart: true,
 			    getOnline: true
-			    //pollInterval: 5,
-			    //pollMultiplication: 1000
 			},
 		});
 		// register the `dim` capability

@@ -4,7 +4,6 @@
   "description": "This app adds support for Domitech devices in Homey",
   "main": "app.js",
   "dependencies": {
-    "homey-log": "^1.0.6",
     "homey-meshdriver": "^1.2.28"
   },
   "devDependencies": {},
