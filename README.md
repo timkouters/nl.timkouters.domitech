@@ -9,7 +9,7 @@ This app adds support for Domitech devices in Homey.
 * Dutch (Nederlands)
 
 ## Change Log:
-### v 1.0.5
+### v 1.0.7
 Added support for UK-version of tthe Domitech light bulb
 
 ### v 1.0.6
