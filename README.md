@@ -10,6 +10,12 @@ This app adds support for Domitech devices in Homey.
 
 ## Change Log:
 ### v 1.0.5
+Added support for UK-version of tthe Domitech light bulb
+
+### v 1.0.6
+Added support for Homey 2.0
+
+### v 1.0.5
 Simplified mesh device and removed manual trigger
 
 ### v 1.0.4

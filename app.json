@@ -4,7 +4,7 @@
     "name": {
         "en": "Domitech"
     },
-    "version": "1.0.6",
+    "version": "1.0.7",
     "compatibility": ">=1.5.0",
     "author": {
         "name": "Tim Kouters",
@@ -41,7 +41,7 @@
       "zwave": {
         "manufacturerId": 526,
         "productTypeId": 19522,
-        "productId": 12596,
+        "productId": [12596, 12597],
         "learnmode": {
           "instruction": {
             "en": "Turn the Domitech led lamp off and on again",
