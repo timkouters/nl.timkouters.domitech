@@ -75,6 +75,8 @@ class DomitechDevice extends ZwaveDevice {
 				return null;
 			}
 		});
+		
+		//this.node.nodeId 
 	}
 }
 

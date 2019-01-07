@@ -9,8 +9,11 @@ This app adds support for Domitech devices in Homey.
 * Dutch (Nederlands)
 
 ## Change Log:
+### v 1.0.8
+Added support for remembering dim-level (default is on)
+
 ### v 1.0.7
-Added support for UK-version of tthe Domitech light bulb
+Added support for UK-version of the Domitech light bulb
 
 ### v 1.0.6
 Added support for Homey 2.0
