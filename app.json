@@ -72,6 +72,17 @@
       "capabilities": [
         "dim",
         "onoff"
+      ],
+      "settings" : [
+        {
+          "id" : "remember_dim",
+          "type" : "checkbox",
+          "label" : {
+        	  "en" : "Remember dim level of the lamp",
+        	  "nl" : "Onthoud het dim niveau van de lamp"
+          },
+           "value": true
+        }
       ]
     }
    ]
