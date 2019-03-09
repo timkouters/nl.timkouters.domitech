@@ -5,6 +5,14 @@ const RAW_DIVIDER = 99;
 const MAX_RAW = 255;
 
 class DomitechDevice extends ZwaveDevice {
+	
+	/**
+	 * Invalidate last known value
+	 */
+	onDeleted() {
+		Homey.ManagerSettings.set('Domitech_dim_level_valid', false);
+	}
+	
 	onMeshInit() {
 		// enable debugging
 		this.disableDebug();
@@ -25,6 +33,7 @@ class DomitechDevice extends ZwaveDevice {
 				if (this.hasCapability('onoff')) this.setCapabilityValue('onoff', value > 0);
 				
 				Homey.ManagerSettings.set('Domitech_dim_level', Math.round(value * RAW_DIVIDER));
+				Homey.ManagerSettings.set('Domitech_dim_level_valid', true);
 				
 				return {
 					Value: Math.round(value * RAW_DIVIDER),
@@ -35,6 +44,7 @@ class DomitechDevice extends ZwaveDevice {
 				var lampLevel = 0;
 				var last_known_value = Homey.ManagerSettings.get('Domitech_dim_level');
 				var remember_dim = this.getSetting('remember_dim', false);
+				var last_known_value_valid = Homey.ManagerSettings.get('Domitech_dim_level_valid');
 				
 				if (report['Value (Raw)'][0] === MAX_RAW) {
 					lampLevel = 1;
@@ -43,7 +53,7 @@ class DomitechDevice extends ZwaveDevice {
 					lampLevel = report['Value (Raw)'][0] / RAW_DIVIDER;
 				}
 				
-				if ((lampLevel != last_known_value) && (this.hasCapability('dim')) && (remember_dim)) {
+				if ((lampLevel != last_known_value) && (this.hasCapability('dim')) && (remember_dim) && (last_known_value_valid)) {
 					// Send out new SET command to put the lamp back to its original dim level
 					this.node.CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value : last_known_value});
 					
