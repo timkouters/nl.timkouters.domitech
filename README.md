@@ -9,6 +9,9 @@ This app adds support for Domitech devices in Homey.
 * Dutch (Nederlands)
 
 ## Change Log:
+### v 1.0.9
+Fixed lamp turning on when Homey was rebooted
+
 ### v 1.0.8
 Added support for remembering dim-level (default is on)
 
