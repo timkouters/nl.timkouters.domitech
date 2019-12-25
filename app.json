@@ -5,7 +5,7 @@
         "en": "Domitech"
     },
     "version": "1.0.9",
-    "compatibility": ">=1.5.0",
+    "compatibility": ">=2.4.0",
     "author": {
         "name": "Tim Kouters",
         "email": "timkouters@gmail.com"
@@ -18,12 +18,17 @@
             }
         }
     },
+    "bugs": {
+      "url": "https://github.com/timkouters/nl.timkouters.domitech/issues"
+    },
+    "source": "https://github.com/timkouters/nl.timkouters.domitech",
     "images": {
     "large": "/assets/images/large.png",
     "small": "/assets/images/small.png"
     },
     "description": {
-    "en": "Domitech devices for Homey"
+    "en": "Domitech devices for Homey",
+    "nl": "Domitech apparaten voor Homey"
   },
   "category": [
     "lights"
