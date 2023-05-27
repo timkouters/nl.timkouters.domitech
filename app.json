@@ -1,11 +1,12 @@
 {
     "id": "nl.timkouters.domitech",
-    "sdk" : 2,
+    "sdk" : 3,
     "name": {
-        "en": "Domitech"
+        "en": "Domitech",
+        "nl": "Domitech"
     },
-    "version": "1.1.0",
-    "compatibility": ">=2.4.0",
+    "version": "1.2.0",
+    "compatibility": ">=5.0.0",
     "author": {
         "name": "Tim Kouters",
         "email": "timkouters@gmail.com"
@@ -22,6 +23,7 @@
       "url": "https://github.com/timkouters/nl.timkouters.domitech/issues"
     },
     "source": "https://github.com/timkouters/nl.timkouters.domitech",
+    "brandColor": "#000000",
     "images": {
     "large": "/assets/images/large.png",
     "small": "/assets/images/small.png"
