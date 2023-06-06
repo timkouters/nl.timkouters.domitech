@@ -9,6 +9,9 @@ This app adds support for Domitech devices in Homey.
 * Dutch (Nederlands)
 
 ## Change Log:
+### v 1.2.0
+Upgraded to SDK v3
+
 ### v 1.1.0
 Added more information on the app store page
 
