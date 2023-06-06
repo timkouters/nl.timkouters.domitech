@@ -11,6 +11,12 @@
         "name": "Tim Kouters",
         "email": "timkouters@gmail.com"
     },
+    "contributors": {
+    "developers": [
+      {
+        "name": "Ray-Hoo"
+      }
+    ],
     "contributing": {
         "donate": {
             "paypal": {
