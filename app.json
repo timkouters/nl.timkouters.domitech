@@ -1,49 +1,49 @@
 {
-    "id": "nl.timkouters.domitech",
-    "sdk" : 3,
-    "name": {
-        "en": "Domitech",
-        "nl": "Domitech"
-    },
-    "version": "1.2.0",
-    "compatibility": ">=5.0.0",
-    "author": {
-        "name": "Tim Kouters",
-        "email": "timkouters@gmail.com"
-    },
-    "contributors": {
+  "id": "nl.timkouters.domitech",
+  "sdk": 3,
+  "name": {
+    "en": "Domitech",
+    "nl": "Domitech"
+  },
+  "version": "2.0.0",
+  "compatibility": ">=5.0.0",
+  "author": {
+    "name": "Tim Kouters",
+    "email": "timkouters@gmail.com"
+  },
+  "contributors": {
     "developers": [
       {
         "name": "Ray-Hoo"
       }
     ]
-    },
-    "contributing": {
-        "donate": {
-            "paypal": {
-                "email": "timkouters@gmail.com",
-                "currency": "EUR"
-            }
-        }
-    },
-    "bugs": {
-      "url": "https://github.com/timkouters/nl.timkouters.domitech/issues"
-    },
-    "source": "https://github.com/timkouters/nl.timkouters.domitech",
-    "brandColor": "#000000",
-    "images": {
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "email": "timkouters@gmail.com",
+        "currency": "EUR"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/timkouters/nl.timkouters.domitech/issues"
+  },
+  "source": "https://github.com/timkouters/nl.timkouters.domitech",
+  "brandColor": "#000000",
+  "images": {
     "large": "/assets/images/large.png",
     "small": "/assets/images/small.png"
-    },
-    "description": {
+  },
+  "description": {
     "en": "Domitech devices for Homey",
     "nl": "Domitech apparaten voor Homey"
   },
   "category": [
     "lights"
-    ],
-    "drivers": [
-        {
+  ],
+  "drivers": [
+    {
       "id": "dtA19-750-27",
       "name": {
         "en": "Domitech Led bulb"
@@ -51,11 +51,14 @@
       "images": {
         "large": "/drivers/dtA19-750-27/assets/images/large.png",
         "small": "/drivers/dtA19-750-27/assets/images/small.png"
-       },
+      },
       "zwave": {
         "manufacturerId": 526,
         "productTypeId": 19522,
-        "productId": [12596, 12597],
+        "productId": [
+          12596,
+          12597
+        ],
         "learnmode": {
           "instruction": {
             "en": "Turn the Domitech led lamp off and on again",
@@ -87,17 +90,17 @@
         "dim",
         "onoff"
       ],
-      "settings" : [
+      "settings": [
         {
-          "id" : "remember_dim",
-          "type" : "checkbox",
-          "label" : {
-        	  "en" : "Remember dim level of the lamp",
-        	  "nl" : "Onthoud het dim niveau van de lamp"
+          "id": "remember_dim",
+          "type": "checkbox",
+          "label": {
+            "en": "Remember dim level of the lamp",
+            "nl": "Onthoud het dim niveau van de lamp"
           },
-           "value": true
+          "value": true
         }
       ]
     }
-   ]
+  ]
 }
