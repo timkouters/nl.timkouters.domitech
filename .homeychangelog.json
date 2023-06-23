@@ -1,5 +1,8 @@
 {
   "2.0.0": {
     "en": "Migrated to SDK3"
+  },
+  "2.0.1": {
+    "en": "node_modules check"
   }
 }
