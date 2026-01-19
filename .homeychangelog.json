@@ -6,6 +6,12 @@
     "en": "node_modules check"
   },
   "2.0.2": {
-    "en": "Add handlig of timeouts"
+    "en": "Add handling of timeouts in case of unresponsive devices"
+  },
+  "2.0.4": {
+    "en": "Upping version for release"
+  },
+  "2.0.5": {
+    "en": "Upping release for publishing"
   }
 }
