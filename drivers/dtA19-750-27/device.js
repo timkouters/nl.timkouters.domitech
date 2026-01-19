@@ -55,7 +55,10 @@ class DomitechDevice extends ZwaveDevice {
 				
 				if ((lampLevel != last_known_value) && (this.hasCapability('dim')) && (remember_dim) && (last_known_value_valid)) {
 					// Send out new SET command to put the lamp back to its original dim level
-					this.node.CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value : last_known_value});
+					this.node.CommandClass.COMMAND_CLASS_SWITCH_MULTILEVEL.SWITCH_MULTILEVEL_SET({Value : last_known_value})
+					.catch( err => {
+						this.error('Failed to set multilevel switch:', err);
+					});
 					
 					// Update the administration of Homey with the original dim level
 					lampLevel = last_known_value / RAW_DIVIDER;
@@ -64,6 +67,7 @@ class DomitechDevice extends ZwaveDevice {
 						return result;
 				    })
 				    .catch( err => {
+				        this.error('Failed to set dim capability:', err);
 				        return err;
 				    })
 					
